@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Computation: CPU vs GPU</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Matrix Computation: CPU vs GPU</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../articles.html">Articles</a>
+            <a href="../about.html">About</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Matrix Addition Performance</h2>
+        <p>We compare how fast a CPU and a GPU can perform a simple matrix addition for a 512x512 matrix.</p>
+        
+        <h3>CPU Code</h3>
+        <pre><code>#define MATRIX_SIZE 512
+for (int i = 0; i < MATRIX_SIZE; ++i) {
+    for (int j = 0; j < MATRIX_SIZE; ++j) {
+        A[i][j] = static_cast&lt;float&gt;(i + j);
+        B[i][j] = static_cast&lt;float&gt;(i - j);
+    }
+}
+CPU Time: 0.000448083 seconds
+</code></pre>
+
+        <h3>GPU Code (Metal)</h3>
+        <pre><code>#define MATRIX_SIZE 512
+kernel void matrix_add(device const float* A[[buffer(0)]],
+                       device const float* B[[buffer(1)]],
+                       device float* C[[buffer(2)]],
+                       uint id [[thread_position_in_grid]]) {
+    uint row = id / MATRIX_SIZE;
+    uint col = id % MATRIX_SIZE;
+    C[id] = A[id] + B[id];
+}
+GPU Time: 0.000044 seconds
+</code></pre>
+
+        <h3>Conclusion</h3>
+        <p>The GPU outperformed the CPU significantly in this task, demonstrating its advantage in parallel computations.</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 YGPU. All rights reserved.</p>
+    </footer>
+</body>
+</html>
