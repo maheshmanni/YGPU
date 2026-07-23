@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – RemoteCamera</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #333;
+            line-height: 1.7;
+        }
+        h1 { color: #1976D2; }
+        h2 { color: #0D47A1; margin-top: 32px; }
+        p  { margin: 10px 0; }
+        ul { margin: 10px 0; padding-left: 24px; }
+        .last-updated { color: #888; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <h1>Privacy Policy</h1>
+    <h2>RemoteCamera</h2>
+    <p class="last-updated">Last updated: July 2026</p>
+
+    <h2>Overview</h2>
+    <p>
+        RemoteCamera ("the App") is developed and maintained by Mahesh Manni. The App turns
+        your phone into a remote camera that you can view live from a web browser. This
+        privacy policy explains what information the App accesses, where it goes, and your
+        rights as a user.
+    </p>
+
+    <h2>Information We Collect</h2>
+    <p>
+        The App accesses the following on your device solely to provide its core functionality:
+    </p>
+    <ul>
+        <li>
+            <strong>Camera</strong> – used to capture live video while you are streaming.
+        </li>
+        <li>
+            <strong>Microphone</strong> – used to capture live audio while you are streaming
+            (unless muted in Settings).
+        </li>
+    </ul>
+    <p>
+        We do not collect, store, or transmit any personally identifiable information (PII)
+        such as your name, email address, or phone number.
+    </p>
+
+    <h2>How We Use the Information</h2>
+    <p>
+        Video and audio captured by the App are streamed directly, in real time, to a relay
+        server operated by the developer (<code>camera.vgl360.com</code>) and then to the
+        web browser you use to view the stream. This is the same relay for every install —
+        there is no third-party analytics, advertising, or data-broker service involved, and
+        no video or audio is retained on the server after the stream ends.
+    </p>
+
+    <h2>Camera Identity and Access Codes</h2>
+    <p>
+        On first launch, the App registers a unique camera identity (an ID and a secret
+        credential) with the relay server so that only your own viewer session can connect
+        to your camera. This identity, along with your chosen viewer PIN, is stored securely
+        on your device (Android: EncryptedSharedPreferences) and is not shared with anyone
+        else. Uninstalling the App permanently discards this identity — a fresh one is
+        registered on reinstall.
+    </p>
+
+    <h2>Data Sharing</h2>
+    <p>
+        We do not sell, trade, rent, or share your camera or microphone data with third
+        parties. The App does not include any advertising SDKs or third-party analytics
+        libraries.
+    </p>
+
+    <h2>Data Retention</h2>
+    <p>
+        Streams are live-only and are not recorded or stored server-side. Your camera
+        identity and viewer PIN are stored locally on your device only and are discarded
+        when the App is uninstalled.
+    </p>
+
+    <h2>Permissions</h2>
+    <p>The App requests the following Android permissions:</p>
+    <ul>
+        <li><strong>CAMERA</strong> – required to capture and stream live video.</li>
+        <li><strong>RECORD_AUDIO</strong> – required to capture and stream live audio.</li>
+        <li><strong>INTERNET</strong> – required to connect to the relay server and stream video/audio.</li>
+    </ul>
+    <p>
+        These permissions are used solely for the App's core functionality and not for
+        tracking or profiling purposes.
+    </p>
+
+    <h2>Your Control</h2>
+    <p>
+        You can mute the microphone, stop streaming, or uninstall the App at any time, which
+        immediately ends any active stream and (on uninstall) discards the camera's identity.
+    </p>
+
+    <h2>Children's Privacy</h2>
+    <p>
+        The App does not knowingly collect personal information from children under the
+        age of 13. If you believe a child has provided personal information through the
+        App, please contact us so we can take appropriate action.
+    </p>
+
+    <h2>Security</h2>
+    <p>
+        Streams are authenticated with a per-camera secret and connect over a secure
+        WebSocket connection, so only your own viewer session can access your camera.
+    </p>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+        We may update this privacy policy from time to time. Any changes will be posted
+        at this URL with a revised "Last updated" date. Continued use of the App after
+        changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+        If you have any questions or concerns about this privacy policy, please contact:
+    </p>
+    <p>
+        <strong>Mahesh Manni</strong><br>
+        GitHub: <a href="https://github.com/maheshmanni">github.com/maheshmanni</a>
+    </p>
+
+</body>
+</html>
